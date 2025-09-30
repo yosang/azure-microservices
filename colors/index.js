@@ -1,0 +1,33 @@
+// Configure env variables
+require("dotenv").config();
+
+// Configure server-wide modules
+const express = require("express");
+const morgan = require('morgan');
+const app = express();
+const db = require("./models");
+
+// Middlewares
+app.use(express.json()); // Parses JSON requests
+app.use(morgan('dev'));
+
+// EJS engine
+app.set("view engine", "ejs"); // Sets the view engine to ejs
+app.set("views", "views"); // Sets the views directory to views
+
+// Routes
+const colorsRouter = require("./routes/colors.js");
+app.use("/", colorsRouter);
+
+// Configures and synchornizes the database before start
+db.sequelize.sync({ force: false, alter: true });
+
+// Server listens to port 3000
+app.listen(process.env.API_PORT || 5000, (err) => {
+  if (err) {
+    console.log("Express server failed to start", err.message);
+    return;
+  }
+
+  console.log("Express server started");
+});
