@@ -23,5 +23,15 @@ Start the server with
 npm start
 ```
 
+# Techonolgies used
+- `dotenv` - Enables import of enviroment variables from a centralized `.env` file.
+- `ejs` - Enables a frontend view through expressjs.
+- `express` - Express http server for `nodejs`.
+- `morgan` - Useful logger that allows us to monitor responses and requests.
+- `mssql` - Microsoft SQL driver
+- `sequelize` - Object Relational Mapping (ORM) used for scalable database model configurations and queries.
+- `express-http-proxy` - Enables request/response redirection to and from services.
+- `CORS` - Enables cross-origin-resource-sharing between services.
+
 # License
 [MIT](LICENSE)
