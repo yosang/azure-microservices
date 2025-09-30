@@ -1,11 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= title %></title>
-</head>
-<body>
+  </head>
+  <body>
+    <style>
+      li {
+        list-style: none;
+      }
+
+      a {
+        text-decoration: none;
+      }
+      a:visited {
+        color: black;
+      }
+
+      a:hover {
+        color: blueviolet;
+        transition: background-color 0.5s;
+        padding: 0px 5px;
+        font-size: 20px;
+        background-color: antiquewhite;
+      }
+    </style>
+
     <h1>Welcome <%= title %></h1>
-</body>
+    <ul style="display: flex; gap: 20px">
+      <li><a href="/cities">Show cities</a></li>
+      <li><a href="/colors">Show colors</a></li>
+    </ul>
+  </body>
 </html>
